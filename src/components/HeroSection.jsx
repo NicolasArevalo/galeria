@@ -19,39 +19,39 @@ export default function HeroSection() {
   // Map vertical scroll from 0px to 100px. Opacity goes from 100% to 50%
   const logoOpacity = useTransform(scrollY, [0, 100], [1, 0.5]);
 
-  const [paddingX, setPaddingX] = useState('2.5rem');
-  const [paddingY, setPaddingY] = useState('3rem');
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const updatePadding = () => {
-      if (window.innerWidth < 768) {
-        setPaddingX('1rem');
-        setPaddingY('1.5rem');
-      } else {
-        setPaddingX('2.5rem');
-        setPaddingY('3rem');
-      }
-    };
-    
-    updatePadding();
-    window.addEventListener('resize', updatePadding);
-    return () => window.removeEventListener('resize', updatePadding);
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
   }, []);
+
+  // Use precise original constants for desktop, and the new ones for mobile.
+  const logoTop = isMobile ? '1.5rem' : '2.5rem';
+  const logoLeft = isMobile ? '1rem' : '2.5rem';
+  const menuTop = isMobile ? '1.5rem' : '2.5rem';
+  const menuRight = isMobile ? '1rem' : '2.5rem';
+  const mailBottom = isMobile ? '1.5rem' : '3rem';
+  const mailLeft = isMobile ? '1rem' : '2.5rem';
+  const dotBottom = isMobile ? '1.5rem' : '3rem';
+  const dotRight = isMobile ? '1rem' : '2.5rem';
 
   return (
     <section className="relative h-screen w-full overflow-hidden bg-[#050505] text-white">
       <motion.div 
         className="fixed z-50 pointer-events-auto" 
-        style={{ top: paddingY, left: paddingX, opacity: logoOpacity }}
+        style={{ top: logoTop, left: logoLeft, opacity: logoOpacity }}
       >
-        <a href="https://galeria.niiico.com" className="block w-[30px] h-[30px] md:w-[45px] md:h-[45px] hover:scale-105 transition-transform origin-top-left">
+        <a href="https://galeria.niiico.com" className="block w-[60px] h-[60px] md:w-[180px] md:h-[180px] hover:scale-105 transition-transform origin-top-left">
           <svg xmlns="http://www.w3.org/2000/svg" fill="#ededed" viewBox="0 0 280 280" className="w-full h-full object-contain">
             <title>niiico.com</title>
             <polygon points="92 277 117.5 78.5 163 141.5 186.5 3.5 182 216.5 132 153 92 277"/>
           </svg>
         </a>
       </motion.div>
-      <div className="fixed z-50 mix-blend-difference" style={{ top: paddingY, right: paddingX }}>
+      <div className="fixed z-50 mix-blend-difference" style={{ top: menuTop, right: menuRight }}>
         <motion.a 
           href="https://niiico.com/sobre-mi" 
           target="_blank" 
@@ -65,10 +65,10 @@ export default function HeroSection() {
       </div>
       <motion.div 
         className="fixed z-50 mix-blend-difference" 
-        style={{ bottom: paddingY, left: paddingX }}
+        style={{ bottom: mailBottom, left: mailLeft }}
         animate={{
-          x: isAtBottom ? `calc(50vw - ${paddingX} - 50%)` : "0px",
-          y: isAtBottom ? "-15vh" : "0px",
+          x: isAtBottom ? (isMobile ? `calc(50vw - ${mailLeft} - 50%)` : "calc(50vw - 2.5rem - 50%)") : "0px",
+          y: isAtBottom ? (isMobile ? "-15vh" : "-20vh") : "0px",
         }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
       >
@@ -89,7 +89,7 @@ export default function HeroSection() {
           CONTÁCTAME
         </motion.a>
       </motion.div>
-      <div className="fixed z-[60] pointer-events-none" style={{ bottom: paddingY, right: paddingX }}>
+      <div className="fixed z-[60] pointer-events-none" style={{ bottom: dotBottom, right: dotRight }}>
         <div className="flex flex-col items-center justify-center gap-1">
           {/* Bouncing Dot */}
           <motion.div 

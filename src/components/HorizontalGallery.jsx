@@ -6,19 +6,15 @@ const images = galleryData.horizontalGallery;
 
 export default function HorizontalGallery() {
   const [isMobile, setIsMobile] = useState(false);
-  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
     const updateSize = () => setIsMobile(window.innerWidth < 768);
     updateSize();
     window.addEventListener('resize', updateSize);
     return () => window.removeEventListener('resize', updateSize);
   }, []);
 
-  // Avoid hydration mismatch by waiting to render the correct layout
-  if (!mounted) return <div style={{ height: '400vh' }} className="w-full bg-[#050505]" />;
-
+  // Defaults to DesktopGallery for SSR hydration match
   return isMobile ? <MobileGallery /> : <DesktopGallery />;
 }
 
@@ -130,7 +126,7 @@ function DesktopGallery() {
 
 function GalleryItem({ img, index }) {
   return (
-    <div className={`relative flex flex-col justify-center ${img.aspect} w-[35vw] shrink-0`}>
+    <div className={`relative flex flex-col justify-center ${img.aspect} w-[70vw] sm:w-[50vw] md:w-[35vw] shrink-0`}>
       <motion.div 
         className="group relative h-full w-full overflow-hidden cursor-none"
         whileHover={{ scale: 1.05 }}
@@ -139,7 +135,7 @@ function GalleryItem({ img, index }) {
         <img
           src={img.src}
           alt={`Gallery View ${index}`}
-          className="h-full w-full object-contain transition-all duration-700 ease-out group-hover:scale-110 md:group-hover:grayscale-0 grayscale-0 md:grayscale"
+          className="h-full w-full object-contain transition-all duration-700 ease-out group-hover:scale-110"
         />
         <div className="absolute inset-0 bg-black/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
       </motion.div>

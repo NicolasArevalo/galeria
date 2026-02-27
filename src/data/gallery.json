@@ -1,0 +1,55 @@
+{
+  "heroImage": {
+    "src": "https://pub-f0e850caa24b4ca2aa4ac7200edd9415.r2.dev/IMG_6519%20(1).jpg",
+    "alt": "Photographer Subject Main"
+  },
+  "horizontalGallery": [
+    {
+      "src": "https://pub-f0e850caa24b4ca2aa4ac7200edd9415.r2.dev/IMG_5549.jpg",
+      "aspect": "aspect-[3/4]"
+    },
+    {
+      "src": "https://pub-f0e850caa24b4ca2aa4ac7200edd9415.r2.dev/IMG_4855.jpg",
+      "aspect": "aspect-[4/3]"
+    },
+    {
+      "src": "https://pub-f0e850caa24b4ca2aa4ac7200edd9415.r2.dev/IMG_4850.jpg",
+      "aspect": "aspect-square"
+    },
+    {
+      "src": "https://pub-f0e850caa24b4ca2aa4ac7200edd9415.r2.dev/IMG_6555.jpg",
+      "aspect": "aspect-[3/4]"
+    },
+    {
+      "src": "https://pub-f0e850caa24b4ca2aa4ac7200edd9415.r2.dev/IMG_6497.jpg",
+      "aspect": "aspect-video"
+    }
+  ],
+  "mosaicoGallery": [
+    {
+      "src": "https://pub-f0e850caa24b4ca2aa4ac7200edd9415.r2.dev/IMG_5092.jpg",
+      "gridColumn": "span 2",
+      "gridRow": "span 2"
+    },
+    {
+      "src": "https://pub-f0e850caa24b4ca2aa4ac7200edd9415.r2.dev/IMG_5403.jpg",
+      "gridColumn": "span 1",
+      "gridRow": "span 2"
+    },
+    {
+      "src": "https://pub-f0e850caa24b4ca2aa4ac7200edd9415.r2.dev/IMG_6910.jpg",
+      "gridColumn": "span 1",
+      "gridRow": "span 1"
+    },
+    {
+      "src": "https://pub-f0e850caa24b4ca2aa4ac7200edd9415.r2.dev/IMG_6497.jpg",
+      "gridColumn": "span 1",
+      "gridRow": "span 1"
+    },
+    {
+      "src": "https://pub-f0e850caa24b4ca2aa4ac7200edd9415.r2.dev/IMG_4862.jpg",
+      "gridColumn": "span 2",
+      "gridRow": "span 1"
+    }
+  ]
+}

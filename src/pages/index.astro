@@ -1,11 +1,32 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import Preloader from '../components/Preloader.jsx';
+import CustomCursor from '../components/CustomCursor.jsx';
+import HeroSection from '../components/HeroSection.jsx';
+import HorizontalGallery from '../components/HorizontalGallery.jsx';
+import MosaicoGallery from '../components/MosaicoGallery.jsx';
+import FooterMarquee from '../components/FooterMarquee.jsx';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+// `client:load` hydrates the component as soon as the page loads.
+// `client:only="react"` can be used if you need to skip SSR completely (e.g., if a component strictly requires `window`).
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Nicolás Arévalo | Portafolio">
+  {/* Global UI Overlays */}
+  <Preloader client:load />
+  <CustomCursor client:only="react" />
+
+  {/* Main Page Content */}
+  <main class="bg-[#050505] selection:bg-white selection:text-black">
+    <HeroSection client:load />
+    
+    <HorizontalGallery client:load />
+
+    {/* Section Spacer */}
+    <div class="h-[10vh] w-full bg-[#050505]"></div>
+
+    <MosaicoGallery client:load />
+
+    <FooterMarquee client:load />
+  </main>
 </Layout>

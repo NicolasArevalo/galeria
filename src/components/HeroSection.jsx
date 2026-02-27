@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, useScroll, useTransform, useMotionValueEvent } from 'framer-motion';
 import galleryData from '../data/gallery.json';
 
@@ -19,20 +19,39 @@ export default function HeroSection() {
   // Map vertical scroll from 0px to 100px. Opacity goes from 100% to 50%
   const logoOpacity = useTransform(scrollY, [0, 100], [1, 0.5]);
 
+  const [paddingX, setPaddingX] = useState('2.5rem');
+  const [paddingY, setPaddingY] = useState('3rem');
+
+  useEffect(() => {
+    const updatePadding = () => {
+      if (window.innerWidth < 768) {
+        setPaddingX('1rem');
+        setPaddingY('1.5rem');
+      } else {
+        setPaddingX('2.5rem');
+        setPaddingY('3rem');
+      }
+    };
+    
+    updatePadding();
+    window.addEventListener('resize', updatePadding);
+    return () => window.removeEventListener('resize', updatePadding);
+  }, []);
+
   return (
     <section className="relative h-screen w-full overflow-hidden bg-[#050505] text-white">
       <motion.div 
         className="fixed z-50 pointer-events-auto" 
-        style={{ top: '2.5rem', left: '2.5rem', opacity: logoOpacity }}
+        style={{ top: paddingY, left: paddingX, opacity: logoOpacity }}
       >
-        <a href="https://niiico.com" className="block w-4 h-4 hover:scale-105 transition-transform">
+        <a href="https://galeria.niiico.com" className="block w-2.5 h-2.5 md:w-4 md:h-4 hover:scale-105 transition-transform origin-top-left">
           <svg xmlns="http://www.w3.org/2000/svg" fill="#ededed" viewBox="0 0 280 280" className="w-full h-full object-contain">
             <title>niiico.com</title>
             <polygon points="92 277 117.5 78.5 163 141.5 186.5 3.5 182 216.5 132 153 92 277"/>
           </svg>
         </a>
       </motion.div>
-      <div className="fixed z-50 mix-blend-difference" style={{ top: '2.5rem', right: '2.5rem' }}>
+      <div className="fixed z-50 mix-blend-difference" style={{ top: paddingY, right: paddingX }}>
         <motion.a 
           href="https://niiico.com/sobre-mi" 
           target="_blank" 
@@ -46,10 +65,10 @@ export default function HeroSection() {
       </div>
       <motion.div 
         className="fixed z-50 mix-blend-difference" 
-        style={{ bottom: '3rem', left: '2.5rem' }}
+        style={{ bottom: paddingY, left: paddingX }}
         animate={{
-          x: isAtBottom ? "calc(50vw - 2.5rem - 50%)" : "0px",
-          y: isAtBottom ? "-20vh" : "0px",
+          x: isAtBottom ? `calc(50vw - ${paddingX} - 50%)` : "0px",
+          y: isAtBottom ? "-15vh" : "0px",
         }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
       >
@@ -70,7 +89,7 @@ export default function HeroSection() {
           CONTÁCTAME
         </motion.a>
       </motion.div>
-      <div className="fixed z-[60] pointer-events-none" style={{ bottom: '3rem', right: '2.5rem' }}>
+      <div className="fixed z-[60] pointer-events-none" style={{ bottom: paddingY, right: paddingX }}>
         <div className="flex flex-col items-center justify-center gap-1">
           {/* Bouncing Dot */}
           <motion.div 

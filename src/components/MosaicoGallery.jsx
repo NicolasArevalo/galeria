@@ -7,14 +7,7 @@ const mosaicImages = galleryData.mosaicoGallery;
 export default function MosaicoGallery() {
   return (
     <section className="relative w-full bg-[#050505] px-4 py-24 md:px-12 lg:px-24">
-      <div 
-        className="grid gap-4" 
-        style={{ 
-          gridTemplateColumns: 'repeat(4, minmax(0, 1fr))',
-          gridAutoRows: '250px',
-          gap: '16px'
-        }}
-      >
+      <div className="grid gap-2 md:gap-4 grid-cols-2 md:grid-cols-4 auto-rows-[150px] sm:auto-rows-[200px] md:auto-rows-[250px]">
         {mosaicImages.map((item, i) => {
           return (
             <motion.div 

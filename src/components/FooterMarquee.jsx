@@ -21,10 +21,10 @@ export default function FooterMarquee() {
           duration: 10,
         }}
       >
-        <span className="pr-10 font-serif text-[12vw] leading-none tracking-tighter mix-blend-difference">
+        <span className="pr-10 font-serif text-[28vh] leading-none tracking-tighter mix-blend-difference">
           TRABAJEMOS JUNTOS — TRABAJEMOS JUNTOS — TRABAJEMOS JUNTOS —{' '}
         </span>
-        <span className="pr-10 font-serif text-[12vw] leading-none tracking-tighter mix-blend-difference">
+        <span className="pr-10 font-serif text-[28vh] leading-none tracking-tighter mix-blend-difference">
           TRABAJEMOS JUNTOS — TRABAJEMOS JUNTOS — TRABAJEMOS JUNTOS —{' '}
         </span>
       </motion.div>

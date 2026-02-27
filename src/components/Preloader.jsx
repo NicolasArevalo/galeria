@@ -42,7 +42,7 @@ export default function Preloader() {
           initial={{ y: 0 }}
           exit={{ y: '-100vh' }}
           transition={{ duration: 1, ease: [0.76, 0, 0.24, 1] }}
-          className="fixed inset-0 z-[100] flex h-[100vh] w-full items-end justify-end bg-[#050505] pb-12 pr-20 md:pb-24 md:pr-40 text-white"
+          className="fixed inset-0 z-[100] flex h-[100vh] w-full items-center justify-center md:items-end md:justify-end bg-[#050505] pb-0 pr-0 md:pb-24 md:pr-40 text-white"
         >
           <div className="font-serif text-[10vw] leading-none sm:text-[8vw] md:text-[6vw]">
             {percent}%

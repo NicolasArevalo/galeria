@@ -44,7 +44,7 @@ export default function HeroSection() {
         className="fixed z-50 pointer-events-auto" 
         style={{ top: paddingY, left: paddingX, opacity: logoOpacity }}
       >
-        <a href="https://galeria.niiico.com" className="block w-2.5 h-2.5 md:w-4 md:h-4 hover:scale-105 transition-transform origin-top-left">
+        <a href="https://galeria.niiico.com" className="block w-[30px] h-[30px] md:w-[45px] md:h-[45px] hover:scale-105 transition-transform origin-top-left">
           <svg xmlns="http://www.w3.org/2000/svg" fill="#ededed" viewBox="0 0 280 280" className="w-full h-full object-contain">
             <title>niiico.com</title>
             <polygon points="92 277 117.5 78.5 163 141.5 186.5 3.5 182 216.5 132 153 92 277"/>

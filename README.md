@@ -1,46 +1,38 @@
-# Astro Starter Kit: Basics
+# 📸 Nicolás Arévalo – Galería Interactiva
 
-```sh
-npm create astro@latest -- --template basics
+¡Bienvenido al código fuente de mi portafolio fotográfico! Esta es una experiencia web inmersiva diseñada para mostrar mi trabajo a través de interacciones fluidas, animaciones modernas y un diseño minimalista que pone el arte en primer plano.
+
+## ✨ Características Principales
+
+- **🖼️ Scroll Horizontal & Collage Móvil:** Una línea de tiempo fotográfica que se desplaza horizontalmente en escritorio, y se transforma en un hermoso collage apilado dinámicamente en dispositivos móviles.
+- **🔳 Mosaico Asimétrico:** Una cuadrícula CSS adaptativa (CSS Grid) que organiza las fotografías de manera editorial, jugando con proporciones y tamaños para una vista estructurada pero creativa.
+- **✨ Animaciones de Alta Gama:** Transiciones suaves, efectos *parallax*, variaciones de escala al hacer hover y un pie de página (*marquee*) infinito, logrados con **Framer Motion**.
+- **📱 100% Responsivo:** Diseño líquido que ajusta el tamaño de las tipografías masivas, el espacio y las retículas de imágenes para lucir impecable en teléfonos, tablets y pantallas ultra anchas.
+- **🖱️ Cursor Personalizado:** Un cursor inversor de colores que interactúa sutilmente con el entorno para una sensación *premium*.
+
+## 🛠️ Tecnologías Utilizadas
+
+Este proyecto fue construido priorizando el rendimiento, la experiencia de desarrollo y una UI moderna:
+
+- **[Astro](https://astro.build/)** - El framework web de próxima generación para velocidades de carga ultrarrápidas.
+- **[React](https://reactjs.org/)** - Utilizado para los componentes altamente interactivos (galerías, cursor, cabecera).
+- **[Tailwind CSS](https://tailwindcss.com/)** - Estilado rápido, utilitario y enfocado directo en el diseño.
+- **[Framer Motion](https://www.framer.com/motion/)** - La magia detrás de todos los efectos de scroll y animaciones basadas en físicas.
+
+## 🚀 Cómo ejecutarlo localmente
+
+Clona el repositorio y lanza el servidor de desarrollo en cuestión de segundos:
+
+```bash
+# 1. Instala las dependencias
+npm install
+
+# 2. Inicia el servidor de desarrollo local
+npm run dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Visita `http://localhost:4321` en tu navegador para ver la magia en acción.
 
-## 🚀 Project Structure
+---
 
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
-
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+*Diseñado y desarrollado con pasión para destacar el impacto visual de cada captura.*

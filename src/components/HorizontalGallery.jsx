@@ -51,7 +51,7 @@ function MobileGallery() {
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
         >
-          <img src={images[0].src} className="w-full h-auto object-contain grayscale transition duration-700" />
+          <img src={images[0].src} className="w-full h-auto object-contain grayscale-0 transition duration-700" />
         </motion.div>
 
         {/* Img 1 - Slides from left */}
@@ -59,7 +59,7 @@ function MobileGallery() {
           className="absolute shadow-[0_10px_30px_rgba(0,0,0,0.8)] z-20" 
           style={{ top: '22vh', left: '4vw', width: '55vw', x: xImg1, opacity: opImg1, rotate: -2 }}
         >
-          <img src={images[1].src} className="w-full h-auto object-contain grayscale transition duration-700" />
+          <img src={images[1].src} className="w-full h-auto object-contain grayscale-0 transition duration-700" />
         </motion.div>
 
         {/* Img 2 - Slides from left */}
@@ -67,7 +67,7 @@ function MobileGallery() {
           className="absolute shadow-[0_10px_30px_rgba(0,0,0,0.8)] z-30" 
           style={{ top: '42vh', right: '8vw', width: '60vw', x: xImg2, opacity: opImg2, rotate: 2 }}
         >
-          <img src={images[2].src} className="w-full h-auto object-contain grayscale transition duration-700" />
+          <img src={images[2].src} className="w-full h-auto object-contain grayscale-0 transition duration-700" />
         </motion.div>
 
         {/* Img 3 - Slides from left */}
@@ -75,7 +75,7 @@ function MobileGallery() {
           className="absolute shadow-[0_10px_30px_rgba(0,0,0,0.8)] z-40" 
           style={{ top: '60vh', left: '8vw', width: '50vw', x: xImg3, opacity: opImg3, rotate: -3 }}
         >
-          <img src={images[3].src} className="w-full h-auto object-contain grayscale transition duration-700" />
+          <img src={images[3].src} className="w-full h-auto object-contain grayscale-0 transition duration-700" />
         </motion.div>
 
         {/* Img 4 - Slides from left */}
@@ -83,7 +83,7 @@ function MobileGallery() {
           className="absolute shadow-[0_10px_30px_rgba(0,0,0,0.8)] z-50" 
           style={{ bottom: '8vh', right: '4vw', width: '65vw', x: xImg4, opacity: opImg4, rotate: 1 }}
         >
-          <img src={images[4].src} className="w-full h-auto object-contain grayscale transition duration-700" />
+          <img src={images[4].src} className="w-full h-auto object-contain grayscale-0 transition duration-700" />
         </motion.div>
 
       </div>
@@ -139,7 +139,7 @@ function GalleryItem({ img, index }) {
         <img
           src={img.src}
           alt={`Gallery View ${index}`}
-          className="h-full w-full object-contain transition-all duration-700 ease-out group-hover:scale-110 group-hover:grayscale-0 grayscale"
+          className="h-full w-full object-contain transition-all duration-700 ease-out group-hover:scale-110 md:group-hover:grayscale-0 grayscale-0 md:grayscale"
         />
         <div className="absolute inset-0 bg-black/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
       </motion.div>
